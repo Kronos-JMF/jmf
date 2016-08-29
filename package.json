@@ -12,7 +12,7 @@
     "prepublish": "npm run compile",
     "lint": "eslint src",
     "test": "npm run jsformat && npm run lint && npm run testonly",
-    "testonly": "babel-node ./node_modules/.bin/_mocha tests/*Test.js",
+    "testonly": "npm run prepublish && babel-node ./node_modules/.bin/_mocha tests/*Test.js",
     "doc": "jsdoc src/*.js -d jsdoc",
     "jsformat": "js-beautify -r -f `ls src/*.js`",
     "cover": "babel-node node_modules/isparta/bin/isparta cover --report text --report html node_modules/mocha/bin/_mocha -- tests/*Test.js --reporter dot",
@@ -29,13 +29,16 @@
   "engines": {
     "node": ">=5"
   },
-  "contributors": [{
-    "name": "Torsten Link",
-    "email": "torstenlink@gmx.de"
-  }, {
-    "name": "Markus Felten",
-    "email": "markus.felten@gmx.de"
-  }],
+  "contributors": [
+    {
+      "name": "Torsten Link",
+      "email": "torstenlink@gmx.de"
+    },
+    {
+      "name": "Markus Felten",
+      "email": "markus.felten@gmx.de"
+    }
+  ],
   "license": "BSD-2-Clause",
   "config": {
     "commitizen": {
@@ -60,5 +63,8 @@
     "mocha": "^3.0.0",
     "mocha-lcov-reporter": "^1.2.0",
     "semantic-release": "^4.3.5"
+  },
+  "dependencies": {
+    "change-case": "^3.0.0"
   }
 }

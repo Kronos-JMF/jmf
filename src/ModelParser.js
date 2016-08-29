@@ -1,14 +1,14 @@
 /* jslint node: true, esnext: true */
 'use strict';
 
-import { Logger } from './Logger';
+import Logger from './Logger';
 
 /**
  * The base Model parser
  * Parses the model and calls eventhandler
  * @class
  */
-export class ModelParser {
+export default class ModelParser {
 
   constructor(opts) {
     if (!opts) {
@@ -35,12 +35,12 @@ export class ModelParser {
    * @public
    */
   printErrors() {
-		this.event_handler.forEach(handler =>{
-			this.logger.error('--------------------------------------------');
-			this.logger.error(`Print errors for EventHandler : '${handler.contructor.name}'`);
-			this.logger.error('--------------------------------------------');
-			handler.printErrors();
-		});
+    this.event_handler.forEach(handler => {
+      this.logger.error('--------------------------------------------');
+      this.logger.error(`Print errors for EventHandler : '${handler.constructor.name}'`);
+      this.logger.error('--------------------------------------------');
+      handler.printErrors();
+    });
   }
 
 

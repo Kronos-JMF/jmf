@@ -60,7 +60,7 @@ const ATTRIBUTE_DEFINITION_DEFAULTS = {
 /**
  * The Base Event Handler
  */
-export class DefaultEventHandler {
+export default class DefaultEventHandler {
 
   constructor(opts) {
     if (!opts) {

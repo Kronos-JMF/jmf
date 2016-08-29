@@ -15,7 +15,7 @@ const ID_FIELD_NAME = '__id_unique';
 /**
  * This
  */
-export class DefaultExporter {
+export default class DefaultExporter {
   constructor(opts) {
     if (!opts) {
       // eslint-disable-next-line no-param-reassign

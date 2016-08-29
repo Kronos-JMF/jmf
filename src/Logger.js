@@ -18,9 +18,8 @@ function getTime() {
  * Implements a default logger
  * @class
  */
-export class Logger {
-  constructor() {
-  }
+export default class Logger {
+  constructor() {}
 
   log(level, arg) {
     this._validationErrorCount++;
