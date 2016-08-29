@@ -13,13 +13,13 @@ function getTime() {
   return dateStr + ' ' + timeStr;
 }
 
+
 /**
  * Implements a default logger
  * @class
  */
 export class Logger {
   constructor() {
-
   }
 
   log(level, arg) {
