@@ -5,10 +5,7 @@ import path from 'path';
 import assert from 'assert';
 import fs from 'fs';
 
-import {
-	ModelParser
-}
-from '../lib/ModelParser';
+import {ModelParser} from '../lib/ModelParser';
 
 
 const metaModelFile = path.join(__dirname, '../tests/fixtures/demo_model.json');
