@@ -5,9 +5,8 @@
   "keywords": [
     "JMF"
   ],
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "main": "lib/Index.js",
     "debug": "npm run compile && mocha --debug-brk tests/*Test.js --compilers js:babel-register",
     "compile": "babel --presets es2015,stage-0 -d lib/ src/",
     "prepublish": "npm run compile",
@@ -30,16 +29,13 @@
   "engines": {
     "node": ">=5"
   },
-  "contributors": [
-    {
-      "name": "Torsten Link",
-      "email": "torstenlink@gmx.de"
-    },
-    {
-      "name": "Markus Felten",
-      "email": "markus.felten@gmx.de"
-    }
-  ],
+  "contributors": [{
+    "name": "Torsten Link",
+    "email": "torstenlink@gmx.de"
+  }, {
+    "name": "Markus Felten",
+    "email": "markus.felten@gmx.de"
+  }],
   "license": "BSD-2-Clause",
   "config": {
     "commitizen": {
