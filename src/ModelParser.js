@@ -36,7 +36,7 @@ export default class ModelParser {
    */
   printErrors() {
     this.event_handler.forEach(handler => {
-      if(! handler.isvalid()){
+      if (!handler.isValid()) {
         this.logger.error('---------------------------------------');
         this.logger.error(`Print errors for EventHandler : '${handler.constructor.name}'`);
         this.logger.error('---------------------------------------');
