@@ -9,7 +9,7 @@ const fs = require('fs');
 const ID_FIELD_NAME = '__id_unique';
 
 /**
- * The base class for the GraphQL exporter
+ * The base class for the JMF exporter
  */
 
 /**
