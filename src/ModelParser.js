@@ -122,7 +122,7 @@ export default class ModelParser {
     // ---------------------------------
     Object.keys(model).forEach(objectName => {
       this.event_handler.forEach(handler => {
-        handler.validateObject(objectName, model[objectName]);
+        handler.validateObject(objectName, model[objectName], model);
       });
     });
 

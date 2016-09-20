@@ -184,9 +184,10 @@ export default class DefaultEventHandler {
    * @public
    * @param {string} objectName - The name of the object to be created
    * @param {object} config - The complete configuration of this object
+   * @param {object} configAll - The complete configuration
    */
-  validateObject(objectName, config) {
-    if(config.attributes !== undefined){
+  validateObject(objectName, config, configAll) {
+    if (config.attributes !== undefined) {
       // check that each object has a minimum of one attribute which is an key_field
       let hasKeyField = false;
       Object.keys(config.attributes).forEach(attributeName => {
@@ -198,6 +199,14 @@ export default class DefaultEventHandler {
       if (!hasKeyField) {
         // eslint-disable-next-line quotes
         this.handleError(objectName, 'object', '-', `The object has not attribute which has 'in_key_hash' set to 'true'`);
+      }
+    }
+
+    // check that the extended object exists
+    const extendObject = config.extends;
+    if (extendObject !== undefined) {
+      if (configAll[extendObject] === undefined) {
+        this.handleError(objectName, 'object', 'extends', `The objects extends the object '${extendObject}', which is not defined in the model`);
       }
     }
   }
