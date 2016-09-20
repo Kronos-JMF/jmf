@@ -186,20 +186,20 @@ export default class DefaultEventHandler {
    * @param {object} config - The complete configuration of this object
    */
   validateObject(objectName, config) {
-    // check that each object has a minimum of one attribute which is an key_field
-    let hasKeyField = false;
-    Object.keys(config.attributes).forEach(attributeName => {
-      if (config.attributes[attributeName].in_key_hash) {
-        hasKeyField = true;
+    if(config.attributes !== undefined){
+      // check that each object has a minimum of one attribute which is an key_field
+      let hasKeyField = false;
+      Object.keys(config.attributes).forEach(attributeName => {
+        if (config.attributes[attributeName].in_key_hash) {
+          hasKeyField = true;
+        }
+      });
+
+      if (!hasKeyField) {
+        // eslint-disable-next-line quotes
+        this.handleError(objectName, 'object', '-', `The object has not attribute which has 'in_key_hash' set to 'true'`);
       }
-    });
-
-    if (!hasKeyField) {
-      // eslint-disable-next-line quotes
-      this.handleError(objectName, 'object', '-', `The object has not attribute which has 'in_key_hash' set to 'true'`);
     }
-
-    // check that if an object extending an other one, that the object exists
   }
 
   /**
