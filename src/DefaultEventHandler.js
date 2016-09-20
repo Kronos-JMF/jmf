@@ -198,6 +198,8 @@ export default class DefaultEventHandler {
       // eslint-disable-next-line quotes
       this.handleError(objectName, 'object', '-', `The object has not attribute which has 'in_key_hash' set to 'true'`);
     }
+
+    // check that if an object extending an other one, that the object exists
   }
 
   /**
@@ -216,21 +218,13 @@ export default class DefaultEventHandler {
   }
 
   /**
-   * Creates the default aatributes for an object
+   * Creates the default atributes for an object
    * @protected
    * @param {string} objectName - The name of the object to be created
    * @param {object} config - The complete configuration of this object
    */
-  createDefaultAttributes(objectName, config) {
-    // add the default attributes
-    Object.keys(this.default_attributes).forEach(attrName => {
-      if (config.attributes[attrName] !== undefined) {
-        this.handleError(objectName, 'attribute', attrName, `The object has an attribute '${attrName}' which collides with an default attribute`);
-      } else {
-        config.attributes[attrName] = this.default_attributes[attrName];
-      }
-
-    });
+  createDefaultAttributes(objectName, config) { // eslint-disable-line no-unused-vars
+    // should be implemented by derived classes
   }
 
   /**
