@@ -27,6 +27,9 @@ The model is a list of objects.
 		"main" : true,
 		"attributes" : {
 
+		},
+		"methods" : {
+
 		}
 	}
 }
@@ -49,10 +52,9 @@ The model is a list of objects.
 
 	This section contains all the attributes.
 
-* references
+* methods
 
-	This section contains all the references. It is important to mentioned that the
-	names of the attributes and references must be unique over both types.
+	Define available methods. This defines only the names and parameters. The method itself needs to be implemented
 
 ## Structure of an attribute definition
 
@@ -71,6 +73,11 @@ The model is a list of objects.
 				"description" : " The nick names of the Person",
 				"upper_bound": -1,
 				"unique": true
+			},
+			"friendCount" : {
+				"type" : "number",
+				"description" : "The number of friends this person has",
+				"read_only": true
 			},
 			"address" : {
 				"type" : "address",
@@ -114,7 +121,7 @@ The model is a list of objects.
 
 * friends
 
-	A list of refrenced objects.
+	A list of referenced objects.
 
 ### Parameter explanation
 
@@ -126,6 +133,11 @@ The model is a list of objects.
 * description
 
 	The description of this attribute
+
+* read_only
+
+	Default("false")
+	If set to "true" it means it is a computed property. The code for this needs to be implemented.
 
 * upper_bound
 
@@ -154,9 +166,29 @@ The model is a list of objects.
 	in one object at the same time. So this contained object will be assigned to an other attribute where contained is Also
 	set to a true value, it will be removed from the previous object.
 
+## Structure of a method definition
+
+```json
+{
+	"person" : {		
+		"methods" :{
+			"computeAnyThing" : {
+				"parameters" :{
+
+				},
+				"returns" : {
+					
+				}
+			},
+		},
+	}
+}
+```
+
+
 ## Annotations
 
-Annotations could be added to an obkect 
+Annotations could be added to an object
 
 ```json
 {
