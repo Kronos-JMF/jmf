@@ -63,6 +63,6 @@
     "semantic-release": "^8.0.0"
   },
   "dependencies": {
-    "change-case": "^3.0.0"
+    "change-case": "^4.0.0"
   }
 }
